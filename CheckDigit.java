@@ -50,17 +50,12 @@ public class CheckDigit
     * numWithCheckDigit >= 0
     */
     public static boolean isValid(int numWithCheckDigit)
-    { 
-        // make a copy of the number as a string so we can scan each digit
-        String snum = "" + numWithCheckDigit;
-        
-        // extract the last digit
-        String schk = snum.substring(snum.length()-1);
-        int inputCheckDigit = Integer.valueOf(schk);
+    {         
+        // extract the last digit        
+        int inputCheckDigit = numWithCheckDigit % 10;
         
         // separate the rest of the number from the last digit        
-        snum = snum.substring(0, snum.length()-1 );               
-        int num = Integer.valueOf(snum);
+        int num = numWithCheckDigit / 10;
         
         // calculate the check digit
         int calculatedCheckDigit = getCheck(num);
