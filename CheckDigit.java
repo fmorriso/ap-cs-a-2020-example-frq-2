@@ -11,7 +11,11 @@ public class CheckDigit
         int checkDigit = 0;       
         int sum = 0;
         String scannableNum = "" + num;
-        // scan original number, right-to-left, isolate each digit, multiply * factor(1 or 2) and sum each individual digit
+        /*
+         * scan original number, right-to-left,
+         * isolate each digit, multiply * factor(1 or 2)
+         * and sum each individual digit
+         */
         int factor = 2;        
         for(int i = scannableNum.length() - 1; i >= 0; i--)
         {
@@ -31,7 +35,9 @@ public class CheckDigit
             else            factor = 2;
         }
         
+        // get whole number of 7's
         int div = sum / 7;
+        // check digit is how much more it takes to get to the next highest multiple of 7
         checkDigit = sum - (7 * div);
         
         return checkDigit;
