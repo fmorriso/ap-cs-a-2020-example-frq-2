@@ -5,28 +5,7 @@ public class CheckDigit
     /** Returns the check digit for num
     * Precondition: The number of digits in num is between one and six, inclusive.
     * num >= 0
-    */    
-    public static int getCheckAmex(int num)
-    {
-        // sum the individual digits
-        int sum = 0;
-        String s = "" + num;
-        for(int i = 0; i < s.length(); i++)
-            sum += Integer.parseInt(s.substring(i, i+1));
-        
-                
-        int rem = sum % 7;
-        int checkDigit = 7 - rem;     
-        
-        return checkDigit;        
-    }
-    
-    public static int getCheckAirline(int num)
-    {
-        int rem = num % 7;
-        return rem;
-    }
-    
+    */       
     public static int getCheck(int num)
     {
         int checkDigit = 0;       
